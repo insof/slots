@@ -35,11 +35,7 @@ class GameField extends PIXI.Sprite {
     }
 
     addSlots() {
-        let background = new PIXI.Graphics().lineStyle(2, 0x220099)
-            .drawRoundedRect(-515, -327, 1030, 650, 20).endFill();
-
         let config = {
-            background: background,
             margin: 2,
             preRollTiles: 0.33,
             postRollTiles: 0.33,
@@ -179,8 +175,8 @@ class GameField extends PIXI.Sprite {
         this.slots.tilesMap.forEach(function (ree) {
             for (let i = 0; i < ree.length; i++) {
                 if (ree[i].tween) {
-                    ree[i].alpha = 1;
                     ree[i].tween.stop();
+                    ree[i].alpha = 1;
                     ree[i].tween = null;
                 }
             }
@@ -207,10 +203,12 @@ class GameField extends PIXI.Sprite {
     onResize() {
         if (Layout.orientation === Layout.LANDSCAPE) {
             this.shader.visible = false;
+            if (this.predictionText) this.predictionText.visible = true;
             this.back.height = Layout.gameHeight;
             this.back.scale.x = this.back.scale.y;
             this.slots.position.set(0, -35);
         } else {
+            this.predictionText.visible = false;
             this.shader.clear();
             this.shader.beginFill(0x555555, 1);
             this.shader.drawRect(-Layout.gameWidth / 2, -Layout.gameHeight / 2, Layout.gameWidth, Layout.gameHeight);

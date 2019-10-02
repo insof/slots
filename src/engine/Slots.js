@@ -118,11 +118,11 @@ export default class Slots extends PIXI.Sprite {
             let reelTiles = tilesArray[i];
             let maskPolygon = maskPolygons[i]
                 || [
-                    -xPeriod / 2 + margin, -yPeriod + margin,
-                    xPeriod / 2 - margin, -yPeriod + margin,
-                    xPeriod / 2 - margin, -yPeriod + yPeriod * (visibleRows + 1) - margin,
-                    -xPeriod / 2 + margin, -yPeriod + yPeriod * (visibleRows + 1) - margin,
-                    -xPeriod / 2 + margin, -yPeriod + margin
+                    -xPeriod / 2 + margin, -yPeriod /1.2+ margin,
+                    xPeriod / 2 - margin, -yPeriod/1.2 + margin,
+                    xPeriod / 2 - margin, -yPeriod/1.2 + yPeriod * (visibleRows + 0.65) - margin,
+                    -xPeriod / 2 + margin, -yPeriod/1.2 + yPeriod * (visibleRows + 0.65) - margin,
+                    -xPeriod / 2 + margin, -yPeriod/1.2 + margin
                 ];
 
             let reel = new Reel(reelNumber, reelTiles, maskPolygon, this.config);
