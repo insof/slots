@@ -1,0 +1,24 @@
+{
+  "name": "unfold_test",
+  "version": "0.0.1",
+  "description": "Game",
+  "main": "src/index.js",
+  "author": "insof",
+  "license": "ISC",
+  "scripts": {
+    "start": "webpack-dev-server --host 0.0.0.0 --port 8080 --config webpack.config.js",
+    "build": "webpack -p --config webpack.config.build.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "copy-webpack-plugin": "^4.5.1",
+    "es6-tween": "^5.5.10",
+    "fontfaceobserver": "^2.0.13",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  }
+}
