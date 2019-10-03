@@ -208,7 +208,7 @@ class GameField extends PIXI.Sprite {
             this.back.scale.x = this.back.scale.y;
             this.slots.position.set(0, -35);
         } else {
-            this.predictionText.visible = false;
+            if (this.predictionText) this.predictionText.visible = false;
             this.shader.clear();
             this.shader.beginFill(0x555555, 1);
             this.shader.drawRect(-Layout.gameWidth / 2, -Layout.gameHeight / 2, Layout.gameWidth, Layout.gameHeight);
